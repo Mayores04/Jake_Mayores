@@ -1,0 +1,715 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: whitesmoke;
+    background-image: url("./images/Background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto; 
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    padding: 15px 100px;
+    z-index: 99;
+}
+
+:root {
+    --clr-1: #665eff;
+    --clr-2: #1327c2;
+    --clr-3: #010e40;
+    --clr-4: #091735;
+    --clr-5: #060687;
+    --glow-color: rgb(54, 15, 230);
+}
+
+.logo-name{
+    text-align: center;
+    font-size: 3.3rem;
+    font-weight: 700;
+    aspect-ratio: 1/1.5;
+    padding: 15px 20px;
+    inset: 0; 
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--glow-color);
+    animation: glowing 2s infinite;
+    width: 3em;
+    height: 2em;
+    border-top: 5px solid rgb(11, 23, 60);
+    border-left: 5px solid rgb(11, 23, 60);
+    border-right: 5px double rgb(11, 23, 60);
+    border-bottom: 5px double rgb(11, 23, 60);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px var(--glow-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--glow-color);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--glow-color);
+    }
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    inset: -.2rem;
+    z-index: -1;
+    background: linear-gradient(
+        45deg,
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5),
+        var(--clr-4),
+        var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0% { --gradient-angle: 0deg; }
+    100% { --gradient-angle: 360deg; }
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1em;
+    color: rgb(0, 2, 2);
+    text-decoration: none;
+    font-weight: 800;
+    margin-left: 40px;
+}
+
+header nav a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: -6px;
+    background: rgb(0, 59, 252); 
+    border-radius: 5px;
+    transition: transform .4s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+header nav a:hover:after{
+    filter: brightness(1.2);
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Hire button */
+.Hire_btn {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 2px solid rgb(11, 23, 60);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: transparent;
+    color: hsl(267, 93%, 11%);
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--glow-color);
+    transition: all 0.2s ease-in;
+    margin-left: 40px;
+    animation: glowing 2s infinite;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    
+}
+
+.Hire_btn:hover {
+    border-left: 3px solid rgb(19, 35, 82);
+    border-right: 3px solid rgb(18, 33, 80);
+    border-top: 3px solid rgb(20, 36, 81);
+    border-bottom: 3px solid rgb(12, 42, 134);
+    background: rgb(38, 88, 252);
+    box-shadow: 0 0 30px 5px rgba(2, 148, 246, 0.815);
+    color: hsl(267, 93%, 11%);
+    transition: all 0.2s ease-out;
+    filter: brightness(2);
+}
+
+.Hire_btn:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+.Hire_btn::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.Hire_btn:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+    border-left: 3px solid hsl(225, 62%, 20%);
+    border-right: 3px solid hsl(225, 63%, 22%);
+    border-top: 3px solid hsl(224, 60%, 25%);
+    border-bottom: 3px solid hsl(225, 84%, 23%);
+    background: hsl(226, 97%, 45%);
+    box-shadow: 0 0 30px 5px hsla(204, 98%, 45%, 0.815);
+    color: hsl(267, 93%, 18%);
+    transition: all 0.2s ease-out;
+    filter: brightness(5);
+}
+
+.main {
+    width: 100%;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-top: 10%;
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-container,
+.project-container,
+.contact-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.abouts, .projects, .contacts {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects {
+    margin-top: 130px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects a img:hover{
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    transition: transform 0.4s ease-in-out;
+    border: 3px solid var(--glow-color);
+    cursor: pointer;
+}
+
+.projects-content-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2em;
+    margin-top: 20px;
+}
+
+.project{
+    text-align: justify;
+}
+
+
+.contacts{
+    height: 80%;
+    margin-top: 12%;
+    margin-bottom: 8%;
+}
+
+.contacts-info{
+    width: 80%;
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-info p{
+    justify-content: center;
+    text-align: left;
+}
+
+.contacts-info {
+    justify-content: space-around;
+    gap: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.myImg{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 20px;
+}
+
+.myImg img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.contacts-platform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.contacts-platform .facebook-platform, 
+.contacts-platform .instagram-platform,
+.contacts-platform .twitter-platform,
+.contacts-platform .linkedIn-platform {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    gap: 1em;
+    margin-bottom: 10px;
+}
+
+.contacts-platform .facebook-platform p, 
+.contacts-platform .instagram-platform p,
+.contacts-platform .twitter-platform p,
+.contacts-platform .linkedIn-platform p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    margin-left: 2%;
+}
+
+#facebook-icon{
+    color: hsl(234, 100%, 48%);
+    margin-right: -9px;
+}
+
+#instagram-icon{
+    background: linear-gradient(to right, #f9ce34, #ee2a7b, #6225db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+#twitter-icon{
+    color: hsl(0, 0%, 0%);
+}
+
+#linkedIn-icon{
+    color: hsl(234, 100%, 60%);
+}
+
+#facebook-icon:hover,
+#twitter-icon:hover,
+#instagram-icon:hover,
+#linkedIn-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+.name-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    border-bottom: 8px ridge var(--clr-1);
+}
+
+.myName {
+    position: relative;
+    font-size: 3.3rem;
+    font-weight: 700;
+    color: white;
+    z-index: 1; 
+}
+
+.name-container p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.profile-pic-container img {
+    width: 101%;
+    height: 25em;
+    margin-bottom: -10px;
+}
+
+.profile-pic-container {
+    background-color: transparent;
+    border-top: 10px ridge var(--clr-1);
+    border-left: 10px groove var(--clr-2);
+    border-bottom: 10px groove var(--clr-4);
+    border-right: 10px ridge var(--clr-3);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+
+/*For social media link, yung nasa home page*/
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.links a {
+    margin: 0 10px;
+    color: rgb(213, 213, 213);
+    padding: 3px;
+}
+
+.links a:hover{
+    transform: scale(1.3);
+    transition: transform 0.4s ease-in-out;
+}
+
+:root {
+    --gradient-link-angle: 45deg;
+    --gradient-link-colors: #18afaf, #0c516a, #1e90ff, #9103f7;
+    --glow-link-color: rgba(255, 255, 255, 0.5);
+}
+
+.links a .fa-brands.fa-3x {
+    background: linear-gradient(var(--gradient-link-angle), var(--gradient-link-colors));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px var(--glow-link-color));
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.fa-brands.fa-facebook.fa-3x:hover {
+    background: #0253be; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px #5399f5);
+}
+
+.fa-brands.fa-square-instagram.fa-3x:hover {
+    background: linear-gradient(to right, #f58529, #dd2a7b, #8134af, #515bd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.8));
+}
+
+.fa-brands.fa-square-x-twitter.fa-3x:hover {
+    background: #000000;   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px #191a1b);
+}
+
+.fa-brands.fa-linkedin.fa-3x:hover {
+    background: #0A66C2; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px #0A66C2);
+}
+
+.fa-brands.fa-github.fa-3x:hover {
+    background: #000000; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px #191a1b);
+}
+
+.email-me{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: rgba(9, 66, 255, 0.075);
+    color: #000000;
+}
+
+.email-me .email-me-btn{
+    text-decoration: none;
+    background-color: rgb(242, 242, 255);
+    color: rgb(0, 0, 0);
+    padding: 15px 15px;
+    border-radius: 20px;
+    border: none;
+    position: relative;
+}
+
+.email-me .email-me-btn:hover{
+    transform: scale(1.1);
+    transition: transform 0.4s ease-in-out;
+}
+
+@media only screen and (max-width: 800px) {
+    header {
+        padding: 10px 50px;
+    }
+
+    .logo-name {
+        font-size: 2rem;
+        width: 3.7em;
+        height: 2.5em;
+    }
+
+    .navigation a {
+        font-size: 0.9em;
+        margin-left: 15px;
+    }
+
+    .Hire_btn {
+        padding: 8px 16px;
+        margin-left: 20px;
+        font-size: 1em;
+    }
+
+    .main-container {
+        width: 90%;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .abouts, .projects, .contacts {
+        width: 95%;
+        font-size: 0.9em;
+    }
+
+    .projects{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .project-container{
+        padding-top: 50px;
+    }
+
+    .profile-pic-container {
+        margin-top: 5%;
+        width: 80%;
+        height: 80%;
+    }
+
+    .profile-pic-container img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .name-container h1 {
+        font-size: 2.5rem;
+        margin-top: 30px;
+    }
+
+    .name-container p {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+
+    .myName {
+        font-size: 1.5rem;
+    }
+
+    .project-container{
+        font-size: 0.9em;
+    }
+
+    .contact-container{
+        margin-top: 200px;
+    }
+
+
+    .contacts{
+        height: max-content;
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+
+    .contacts-info{
+        width: 90%;
+        font-size: 0.9em;
+        margin-left: auto;
+        margin-right: auto; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contacts-info h1{
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .contacts-info p{
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .contacts-info {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .email-me{
+        font-size: 0.7;
+        width: 100%;
+        height: 80%;
+        margin-bottom: -30px;
+    }
+
+    .myImg{
+        margin-bottom: -30px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo-name {
+        font-size: 1.5em;
+        width: 3em;
+        height: 1.5em;
+    }
+
+    .navigation a {
+        font-size: 0.9em;
+        margin-left: 10px;
+    }
+
+    .Hire_btn {
+        padding: 6px 12px;
+        margin-left: 5px;
+        font-size: 0.8em;
+    }
+
+    .main-container {
+        width: 100%;
+        height: auto;
+        margin-top: 20%;
+    }
+
+    .abouts, .projects, .contacts {
+        width: 95%;
+        font-size: 0.8em;
+    }
+
+    .profile-pic-container {
+        margin-top: 5%;
+        border: 6px solid black;
+    }
+
+    .name-container h1 {
+        font-size: 2rem;
+    }
+
+    .name-container p {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+
+    .myName {
+        font-size: 1.2rem;
+    }
+
+    .contacts-info{
+        width: 90%;
+        font-size: 0.8em;
+        margin-left: auto;
+        margin-right: auto; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contacts-info h1{
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    .contacts-info p{
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .contacts-info {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
