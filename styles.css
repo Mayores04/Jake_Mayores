@@ -472,7 +472,7 @@ header nav a:hover:after{
 
 :root {
     --gradient-link-angle: 45deg;
-    --gradient-link-colors: #000000, #104558, #007ffe, #9500ff;
+    --gradient-link-colors: #000000, #104558, #0b2a48, #9500ff;
     --glow-link-color: rgb(255, 255, 255, 0.4);
 }
 
