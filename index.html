@@ -13,17 +13,17 @@
     <header>
         <h2 class="logo-name">JM</h2>
         <nav class="navigation">
-            <a href="#home">Home</a>
-            <a href="#project-container">Projects</a>
-            <a href="#contact-container">Contact</a>
-            <a href="CV.html" id="aboutBtn" target="_self">About</a>
-            <button class="Hire_btn">Hire Me</button>
+            <a class="header-contents" href="#home">Home</a>
+            <a class="header-contents" href="#project-container">Projects</a>
+            <a class="header-contents" href="#contact-container">Contact</a>
+            <a class="header-contents" href="CV.html" id="aboutBtn" target="_self">About</a>
         </nav>
+            <button class="Hire_btn">Hire Me</button>
     </header>
     <div class="main"id="home">
         <div class="main-container">
             <div class="name-container" >
-                <h1><span class="myName">Jake J. Mayores (19)</span></h1>
+                <h1><span class="myName">Jake J. Mayores</span></h1>
                 <p>"I'm a computer science student who's dedicated <br>to achieve my dream."</p>
                 <div class="links">
                     <a href="https://www.facebook.com/jakejmayores" target="_blank">
@@ -45,34 +45,39 @@
             </div>
             <div class="profile-pic-container">
                 <img src="images/profile.png" alt="Profile picture">
-            </div>
+            </div>  
         </div>
         <!-- Informations -->
         <div class="project-container" id="project-container">
             <div class="projects">
                 <div class="projects-content-container">
                     <div class="project">
-                        <h2>Project 1</h2>
-                        <a href="https://www.facebook.com/jakejmayores" target="_blank">
-                            <img src="images/contacts.jpg" width="100%" alt="Project 1 Thumbnail">
+                        <h2>Computer Programming 3</h2>
+                        <a href="https://seriouscomputerist.atariverse.com/media/pdf/book/Art%20of%20Computer%20Programming%20-%20Volume%203%20(Sorting%20&%20Searching).pdf" target="_blank">
+                            <img src="images/cp3.png" width="350px" alt="Project 1 Thumbnail">
                         </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec sagittis orci vel consectetur convallis. Nullam euismod, ipsum vel fermentum dapibus, justo lectus malesuada velit, ac consectetur odio neque non urna.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum autem quod ducimus odit! Tenetur laborum, numquam consequatur iure expedita, sunt dolorem provident, laudantium dignissimos optio ipsa rerum itaque nisi.</p>
                     </div>
                     <div class="project">
                         <h2>Project 2</h2>
-                        <a href="http://www.yourproject2.com" target="_blank">
-                            <img src="images/contacts.jpg" width="100%" alt="Project 2 Thumbnail">
+                        <a href="https://www.insidehighered.com/admissions/article/2022/02/14/does-calculus-count-too-much-admissions" target="_blank">
+                            <img src="images/calculus.png" width="350px" alt="Project 2 Thumbnail">
                         </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec sagittis orci vel consectetur convallis. Nullam euismod, ipsum vel fermentum dapibus, justo lectus malesuada velit, ac consectetur odio neque non urna.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque blanditiis fugiat ipsum totam quod provident nulla harum! Doloribus, labore quis. Quod soluta tempora incidunt repellendus perspiciatis unde explicabo sit?</p>
                     </div>
                     <div class="project">
                         <h2>Project 3</h2>
-                        <a href="http://www.yourproject3.com" target="_blank">
-                            <img src="images/contacts.jpg" width="100%" alt="Project 3 Thumbnail">
+                        <a href="https://www.themuse.com/advice/10-free-classes-to-learn-to-code-if-you-have-absolutely-no-idea-where-to-start" target="_blank">
+                            <img src="images/Programming.png" width="350px" alt="Project 3 Thumbnail">
                         </a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec sagittis orci vel consectetur convallis. Nullam euismod, ipsum vel fermentum dapibus, justo lectus malesuada velit, ac consectetur odio neque non urna.</p>
                     </div>
                 </div>
+                <script>
+                    function project4(){
+                        window.location.assign('https://www.w3schools.com/js/js_window_location.asp');
+                    }
+                </script>
             </div>
         </div>
         <div class="contact-container" id="contact-container">
@@ -119,6 +124,19 @@
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
+    <script>
+        document.querySelector('.Hire_btn').addEventListener('click', function() {
+            const email = 'jakemayores05@gmail.com';
+            const subject = 'Hire Request';
+            const body = `Hello Jake,
+
+            I'm interested in hiring you for a project. Please provide more details on your availability and rates.
+
+            Thank you!
+            [Your Name]`;
+
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    </script>
 </body>
 </html>
